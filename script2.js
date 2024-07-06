@@ -1,6 +1,4 @@
-$(document).ready(function() {
-
-    // QR Code scanner
+document.getElementById("demarrer").onclick = function() { 
     function domReady(fn) {
         if (
             document.readyState === "complete" ||
@@ -17,16 +15,12 @@ $(document).ready(function() {
         alert("You Qr is : " + decodeText, decodeResult);
     }
 
-    $('.demarrer').click(function() {
+    domReady(function () {
 
-        domReady(function () {
-
-            let htmlscanner = new Html5QrcodeScanner(
-                "my-qr-reader",
-                { fps: 10, qrbos: 250 }
-            );
-            htmlscanner.render(onScanSuccess);
-        });
-
+        let htmlscanner = new Html5QrcodeScanner(
+            "my-qr-reader",
+            { fps: 10, qrbos: 250 }
+        );
+        htmlscanner.render(onScanSuccess);
     });
-});
+};
